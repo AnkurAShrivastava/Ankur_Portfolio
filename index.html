@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ankur Kumar — IT Analyst | Portfolio</title>
+    <title>Ankur Kumar — IT Analyst | Fullstack</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,43 +31,32 @@
     <style>
         body { font-family: 'Inter', sans-serif; background: #f8f9fc; }
         .font-display { font-family: 'Space Grotesk', sans-serif; }
+        html { scroll-behavior: smooth; }
 
         .gradient-text {
-            background: linear-gradient(135deg, #6366f1, #8b5cf6, #a855f7);
+            background: linear-gradient(135deg, #6366f1, #2563eb);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
         .gradient-bg {
-            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            background: linear-gradient(135deg, #6366f1, #2563eb);
         }
         .gradient-bg-soft {
-            background: linear-gradient(135deg, #eef2ff, #e0e7ff, #f3e8ff);
+            background: linear-gradient(135deg, #eef2ff, #dbeafe, #f3e8ff);
         }
-        .gradient-border {
-            position: relative;
-            background: white;
-            border-radius: 16px;
-        }
-        .gradient-border::before {
-            content: '';
-            position: absolute;
-            inset: -1px;
-            border-radius: 17px;
-            background: linear-gradient(135deg, #c7d2fe, #e9d5ff, #c7d2fe);
-            z-index: -1;
-        }
-
+        
         .profile-ring {
-            background: conic-gradient(from 0deg, #6366f1, #8b5cf6, #a855f7, #6366f1);
-            padding: 4px;
+            background: conic-gradient(from 0deg, #6366f1, #2563eb, #a855f7, #6366f1);
+            padding: 3px;
             border-radius: 50%;
             display: inline-block;
         }
         .profile-ring-inner {
             border-radius: 50%;
-            border: 4px solid #f8f9fc;
+            border: 3px solid #f8f9fc;
             overflow: hidden;
+            background: white;
         }
 
         @keyframes float { 0%,100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-20px) rotate(5deg); } }
@@ -87,31 +76,24 @@
         .scroll-reveal.visible { opacity: 1; transform: translateY(0); }
 
         .skill-pill { transition: all 0.25s ease; }
-        .skill-pill:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 25px -5px rgba(99,102,241,0.25); }
+        .skill-pill:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 25px -5px rgba(37,99,235,0.25); }
 
         .card-hover { transition: all 0.3s ease; }
         .card-hover:hover { transform: translateY(-6px); box-shadow: 0 20px 60px -15px rgba(99,102,241,0.15); }
 
         .nav-blur { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
-
         .magnetic-btn { transition: all 0.3s ease; }
-        .magnetic-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 35px -8px rgba(99,102,241,0.4); }
+        .magnetic-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 35px -8px rgba(37,99,235,0.4); }
 
         .blob-1 { border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%; }
         .blob-2 { border-radius: 58% 42% 30% 70% / 55% 55% 45% 45%; }
 
-        .tab-active { background: linear-gradient(135deg, #6366f1, #8b5cf6); color: white; box-shadow: 0 4px 15px -3px rgba(99,102,241,0.4); }
+        .tab-active { background: linear-gradient(135deg, #6366f1, #2563eb); color: white; box-shadow: 0 4px 15px -3px rgba(37,99,235,0.4); }
 
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: #f8f9fc; }
         ::-webkit-scrollbar-thumb { background: #c7d2fe; border-radius: 3px; }
         ::-webkit-scrollbar-thumb:hover { background: #a5b4fc; }
-
-        .toast { transform: translateY(100px) scale(0.9); opacity: 0; transition: all 0.4s cubic-bezier(0.16,1,0.3,1); }
-        .toast.show { transform: translateY(0) scale(1); opacity: 1; }
-
-        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-        .marquee-track { animation: marquee 30s linear infinite; }
 
         .timeline-dot { position: relative; }
         .timeline-dot::after {
@@ -119,30 +101,40 @@
             position: absolute;
             inset: -4px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #c7d2fe, #e9d5ff);
+            background: linear-gradient(135deg, #c7d2fe, #93c5fd);
             z-index: -1;
             opacity: 0;
             transition: opacity 0.3s;
         }
         .timeline-dot:hover::after { opacity: 1; }
 
-        .resume-btn-glow {
-            position: relative;
-            overflow: hidden;
-        }
+        .resume-btn-glow { position: relative; overflow: hidden; }
         .resume-btn-glow::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
             background: conic-gradient(from 270deg, transparent, rgba(255,255,255,0.15), transparent);
             animation: resume-spin 3s linear infinite;
         }
-        @keyframes resume-spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+        @keyframes resume-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .marquee-track { animation: marquee 30s linear infinite; }
+
+        /* New Stat Card Hover Effect */
+        .stat-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .stat-card:hover {
+            transform: translateY(-4px);
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 10px 30px -5px rgba(99, 102, 241, 0.15);
+            border-color: #c7d2fe;
+        }
+        .stat-card:hover .stat-icon {
+            transform: scale(1.1);
+            background: linear-gradient(135deg, #6366f1, #2563eb);
+            color: white;
         }
     </style>
 </head>
@@ -158,7 +150,7 @@
                 <a href="#about" class="nav-link text-sm font-medium text-gray-500 hover:text-brand-600 px-4 py-1.5 rounded-full transition-colors">About</a>
                 <a href="#skills" class="nav-link text-sm font-medium text-gray-500 hover:text-brand-600 px-4 py-1.5 rounded-full transition-colors">Skills</a>
                 <a href="#experience" class="nav-link text-sm font-medium text-gray-500 hover:text-brand-600 px-4 py-1.5 rounded-full transition-colors">Experience</a>
-                <a href="#certifications" class="nav-link text-sm font-medium text-gray-500 hover:text-brand-600 px-4 py-1.5 rounded-full transition-colors">Certs</a>
+                <a href="#projects" class="nav-link text-sm font-medium text-gray-500 hover:text-brand-600 px-4 py-1.5 rounded-full transition-colors">Projects</a>
                 <a href="#contact" class="nav-link text-sm font-medium text-gray-500 hover:text-brand-600 px-4 py-1.5 rounded-full transition-colors">Contact</a>
             </div>
             <a href="resume.pdf" download class="hidden md:inline-flex gradient-bg text-white text-sm font-semibold px-5 py-2.5 rounded-full magnetic-btn items-center gap-2">
@@ -174,7 +166,7 @@
                 <a href="#about" class="mob-link text-sm font-medium text-gray-600 hover:text-brand-600 hover:bg-brand-50 px-4 py-3 rounded-xl transition-all">About</a>
                 <a href="#skills" class="mob-link text-sm font-medium text-gray-600 hover:text-brand-600 hover:bg-brand-50 px-4 py-3 rounded-xl transition-all">Skills</a>
                 <a href="#experience" class="mob-link text-sm font-medium text-gray-600 hover:text-brand-600 hover:bg-brand-50 px-4 py-3 rounded-xl transition-all">Experience</a>
-                <a href="#certifications" class="mob-link text-sm font-medium text-gray-600 hover:text-brand-600 hover:bg-brand-50 px-4 py-3 rounded-xl transition-all">Certifications</a>
+                <a href="#projects" class="mob-link text-sm font-medium text-gray-600 hover:text-brand-600 hover:bg-brand-50 px-4 py-3 rounded-xl transition-all">Projects</a>
                 <a href="#contact" class="mob-link text-sm font-medium text-gray-600 hover:text-brand-600 hover:bg-brand-50 px-4 py-3 rounded-xl transition-all">Contact</a>
                 <a href="resume.pdf" download class="mob-link gradient-bg text-white text-sm font-semibold px-4 py-3 rounded-xl text-center mt-2 inline-flex items-center justify-center gap-2">
                     <i data-lucide="download" class="w-4 h-4"></i> Download Resume
@@ -186,14 +178,13 @@
     <!-- ========== HERO ========== -->
     <section id="hero" class="relative min-h-screen flex items-center overflow-hidden">
         <!-- Blobs -->
-        <div class="absolute top-20 right-10 w-72 h-72 bg-brand-200/40 blob-1 float-1 pointer-events-none"></div>
-        <div class="absolute bottom-20 left-10 w-96 h-96 bg-purple-200/30 blob-2 float-2 pointer-events-none"></div>
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brand-100/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute top-10 -right-10 sm:top-20 sm:right-10 w-48 h-48 sm:w-64 sm:h-72 lg:w-72 lg:h-72 bg-brand-200/40 blob-1 float-1 pointer-events-none"></div>
+        <div class="absolute -bottom-20 -left-10 sm:bottom-20 sm:left-10 w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 bg-blue-200/30 blob-2 float-2 pointer-events-none"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] bg-brand-100/20 rounded-full blur-3xl pointer-events-none"></div>
 
         <div class="max-w-6xl mx-auto px-6 pt-24 pb-16 w-full">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div class="relative z-10">
-                    <!-- Badge -->
+                <div class="relative z-10 order-2 lg:order-1">
                     <div class="animate-fade-up inline-flex items-center gap-2 bg-white border border-brand-200 rounded-full px-4 py-2 mb-8 shadow-sm">
                         <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
                         <span class="text-xs font-semibold text-gray-600">Open to Opportunities</span>
@@ -205,100 +196,87 @@
                     </h1>
 
                     <p class="animate-fade-up delay-2 text-lg text-gray-500 leading-relaxed mb-4 max-w-lg">
-                        IT Analyst with <span class="text-gray-800 font-semibold">3.8 years</span> of experience bridging <span class="text-gray-800 font-semibold">Legacy Mainframe</span> & <span class="text-gray-800 font-semibold">Modern DevOps</span> in Banking & Finance.
+                        IT Analyst with <span class="text-gray-800 font-semibold">3.11+ years</span> bridging <span class="text-gray-800 font-semibold">Legacy Mainframe</span> & <span class="text-gray-800 font-semibold">Modern Java/DevOps</span>.
                     </p>
+                    <!-- Change 1: Updated Tagline -->
                     <p class="animate-fade-up delay-3 text-base text-gray-400 leading-relaxed mb-8 max-w-lg">
-                        COBOL → Cloud. Manual → AI-Driven. I modernize.
+                        Expert in Backend, Frontend, and SRE.
                     </p>
 
                     <div class="animate-fade-up delay-4 flex flex-wrap gap-4">
                         <a href="#experience" class="gradient-bg text-white font-semibold px-7 py-3.5 rounded-full magnetic-btn inline-flex items-center gap-2 text-sm">
-                            View My Work <i data-lucide="arrow-down-right" class="w-4 h-4"></i>
+                            View Experience <i data-lucide="arrow-down-right" class="w-4 h-4"></i>
                         </a>
                         <a href="resume.pdf" download class="resume-btn-glow bg-white border-2 border-brand-200 text-brand-700 font-semibold px-7 py-3.5 rounded-full magnetic-btn inline-flex items-center gap-2 text-sm shadow-sm hover:border-brand-400">
                             <span class="relative z-10 flex items-center gap-2">
                                 <i data-lucide="download" class="w-4 h-4"></i> Download Resume
                             </span>
                         </a>
-                        <a href="https://www.linkedin.com/in/ankur-a-shrivastava-391096145/" target="_blank" class="bg-white border border-gray-200 text-gray-700 font-semibold px-7 py-3.5 rounded-full magnetic-btn inline-flex items-center gap-2 text-sm shadow-sm hover:border-brand-300">
-                            <i data-lucide="linkedin" class="w-4 h-4"></i> LinkedIn
-                        </a>
                     </div>
 
-                    <!-- Quick Stats -->
-                    <div class="animate-fade-up delay-5 flex items-center gap-8 mt-12 pt-8 border-t border-gray-200/60">
-                        <div>
-                            <p class="text-3xl font-display font-bold text-gray-900 counter" data-target="3.8">0</p>
+                    <!-- REFINED STATS SECTION -->
+                    <div class="animate-fade-up delay-5 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mt-12 pt-8 border-t border-gray-200/60">
+                        <!-- Stat 1: Experience -->
+                        <div class="stat-card flex flex-col items-center justify-center p-4 rounded-2xl border border-transparent">
+                            <div class="stat-icon w-10 h-10 rounded-full bg-brand-100 flex items-center justify-center mb-2 transition-colors duration-300">
+                                <i data-lucide="briefcase" class="w-5 h-5 text-brand-600"></i>
+                            </div>
+                            <p class="text-3xl font-display font-bold text-gray-900">3.11+</p>
                             <p class="text-xs text-gray-400 font-medium mt-1">Years Exp.</p>
                         </div>
-                        <div class="w-px h-10 bg-gray-200"></div>
-                        <div>
-                            <p class="text-3xl font-display font-bold text-gray-900 counter" data-target="8">0</p>
-                            <p class="text-xs text-gray-400 font-medium mt-1">Certifications</p>
-                        </div>
-                        <div class="w-px h-10 bg-gray-200"></div>
-                        <div>
-                            <p class="text-3xl font-display font-bold text-gray-900">L3</p>
+
+                        <!-- Stat 2: Support Tier -->
+                        <div class="stat-card flex flex-col items-center justify-center p-4 rounded-2xl border border-transparent">
+                            <div class="stat-icon w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mb-2 transition-colors duration-300">
+                                <i data-lucide="layers" class="w-5 h-5 text-blue-600"></i>
+                            </div>
+                            <p class="text-3xl font-display font-bold text-gray-900">L2/L3</p>
                             <p class="text-xs text-gray-400 font-medium mt-1">Support Tier</p>
                         </div>
+
+                        <!-- Stat 3: Fullstack Prod Dev & Support -->
+                        <div class="stat-card flex flex-col items-center justify-center p-4 rounded-2xl border border-transparent">
+                            <div class="stat-icon w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center mb-2 transition-colors duration-300">
+                                <i data-lucide="layout" class="w-5 h-5 text-purple-600"></i>
+                            </div>
+                            <p class="text-2xl sm:text-3xl font-display font-bold text-gray-900">Fullstack</p>
+                            <p class="text-xs text-gray-400 font-medium mt-1">Prod. Dev & Support</p>
+                        </div>
                     </div>
+
                 </div>
 
-                <!-- Hero Visual — Profile Photo + Code Card -->
-                <div class="animate-fade-up delay-3 relative hidden lg:flex flex-col items-center gap-6">
-                    <!-- Profile Photo -->
+                <!-- Hero Visual -->
+                <div class="animate-fade-up delay-3 relative flex flex-col items-center gap-6 mt-8 lg:mt-0 w-full order-1 lg:order-2">
                     <div class="relative">
                         <div class="profile-ring float-3">
                             <div class="profile-ring-inner">
-                                <img src="ankur.jpg" alt="Ankur Kumar" class="w-56 h-56 object-cover block">
+                                <img src="ankur.jpg" alt="Ankur Kumar" class="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 object-cover block">
                             </div>
                         </div>
-                        <!-- Floating badge on photo -->
-                        <div class="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-white rounded-full shadow-lg border border-gray-100 px-4 py-2 flex items-center gap-2 float-1 z-20">
+                        <!-- Change 2: Photo Badge -->
+                        <div class="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-white rounded-full shadow-lg border border-gray-100 px-3 py-1.5 sm:px-4 sm:py-2 flex items-center gap-2 float-1 z-20">
                             <div class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></div>
-                            <span class="text-xs font-bold text-gray-700 whitespace-nowrap">Available for Hire</span>
+                            <span class="text-[10px] sm:text-xs font-bold text-gray-700 whitespace-nowrap">Fullstack</span>
                         </div>
                     </div>
 
-                    <!-- Code Card -->
-                    <div class="w-full relative">
-                        <div class="bg-white rounded-2xl shadow-xl shadow-brand-200/20 border border-gray-100 p-6 relative z-10">
+                    <div class="w-full max-w-md relative">
+                        <div class="bg-white rounded-2xl shadow-xl shadow-blue-200/20 border border-gray-100 p-4 sm:p-6 relative z-10">
                             <div class="flex items-center gap-2 mb-4">
                                 <div class="w-2.5 h-2.5 rounded-full bg-red-400"></div>
                                 <div class="w-2.5 h-2.5 rounded-full bg-yellow-400"></div>
                                 <div class="w-2.5 h-2.5 rounded-full bg-green-400"></div>
-                                <span class="text-[10px] text-gray-400 ml-2 font-mono">ankur_portfolio.sh</span>
+                                <span class="text-[10px] text-gray-400 ml-2 font-mono">modernization.java</span>
                             </div>
-                            <div class="font-mono text-xs space-y-1.5">
-                                <p><span class="text-brand-500">const</span> <span class="text-gray-800">ankur</span> = {</p>
-                                <p class="pl-3"><span class="text-purple-500">role</span>: <span class="text-green-600">"IT Analyst"</span>,</p>
-                                <p class="pl-3"><span class="text-purple-500">company</span>: <span class="text-green-600">"NTT DATA"</span>,</p>
-                                <p class="pl-3"><span class="text-purple-500">skills</span>: [<span class="text-green-600">"COBOL"</span>, <span class="text-green-600">"Jenkins"</span>, <span class="text-green-600">"AWS"</span>, <span class="text-green-600">"GenAI"</span>],</p>
-                                <p class="pl-3"><span class="text-purple-500">passion</span>: <span class="text-green-600">"Modernization"</span></p>
-                                <p>};<span class="inline-block w-1.5 h-3 bg-brand-500 ml-1 animate-pulse"></span></p>
-                            </div>
-                        </div>
-                        <!-- Floating mini cards -->
-                        <div class="absolute -top-3 -right-3 bg-white rounded-xl shadow-lg border border-gray-100 px-3 py-2.5 float-1 z-20">
-                            <div class="flex items-center gap-2">
-                                <div class="w-7 h-7 rounded-lg bg-green-100 flex items-center justify-center">
-                                    <i data-lucide="check-circle" class="w-3.5 h-3.5 text-green-600"></i>
-                                </div>
-                                <div>
-                                    <p class="text-[10px] font-bold text-gray-800">Zero Downtime</p>
-                                    <p class="text-[9px] text-gray-400">Deployments</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="absolute -bottom-3 -left-3 bg-white rounded-xl shadow-lg border border-gray-100 px-3 py-2.5 float-2 z-20">
-                            <div class="flex items-center gap-2">
-                                <div class="w-7 h-7 rounded-lg bg-brand-100 flex items-center justify-center">
-                                    <i data-lucide="brain" class="w-3.5 h-3.5 text-brand-600"></i>
-                                </div>
-                                <div>
-                                    <p class="text-[10px] font-bold text-gray-800">GenAI Powered</p>
-                                    <p class="text-[9px] text-gray-400">RCA Automation</p>
-                                </div>
+                            <!-- Change 3: Code Snippet -->
+                            <div class="font-mono text-[10px] sm:text-xs space-y-1.5">
+                                <p><span class="text-blue-600">const</span> <span class="text-gray-800">ankur</span> = {</p>
+                                <p class="pl-3"><span class="text-purple-600">role</span>: <span class="text-green-600">"IT Analyst"</span>,</p>
+                                <p class="pl-3"><span class="text-purple-600">stack</span>: <span class="text-green-600">"Fullstack"</span>,</p>
+                                <p class="pl-3"><span class="text-purple-600">includes</span>: [<span class="text-green-600">"Mainframe"</span>, <span class="text-green-600">"Java"</span>, <span class="text-green-600">"DevOps"</span>, <span class="text-green-600">"SRE"</span>],</p>
+                                <p class="pl-3"><span class="text-purple-600">focus</span>: <span class="text-green-600">"Modernization"</span></p>
+                                <p>};<span class="inline-block w-1.5 h-3 bg-blue-500 ml-1 animate-pulse"></span></p>
                             </div>
                         </div>
                     </div>
@@ -310,154 +288,142 @@
     <!-- ========== MARQUEE ========== -->
     <div class="py-6 bg-white border-y border-gray-100 overflow-hidden">
         <div class="flex whitespace-nowrap marquee-track">
-            <div class="flex items-center gap-8 px-4">
-                <span class="text-sm font-semibold text-gray-300 uppercase tracking-widest">COBOL</span>
+            <div class="flex items-center gap-6 sm:gap-8 px-4">
+                <span class="text-xs sm:text-sm font-semibold text-gray-300 uppercase tracking-widest">Java 17</span>
+                <span class="text-blue-300">✦</span>
+                <span class="text-xs sm:text-sm font-semibold text-gray-300 uppercase tracking-widest">Spring Boot</span>
+                <span class="text-blue-300">✦</span>
+                <span class="text-xs sm:text-sm font-semibold text-gray-300 uppercase tracking-widest">Microservices</span>
+                <span class="text-blue-300">✦</span>
+                <span class="text-xs sm:text-sm font-semibold text-gray-300 uppercase tracking-widest">React JS</span>
+                <span class="text-blue-300">✦</span>
+                <span class="text-xs sm:text-sm font-semibold text-gray-300 uppercase tracking-widest">COBOL</span>
                 <span class="text-brand-300">✦</span>
-                <span class="text-sm font-semibold text-gray-300 uppercase tracking-widest">JCL</span>
+                <span class="text-xs sm:text-sm font-semibold text-gray-300 uppercase tracking-widest">DevOps</span>
                 <span class="text-brand-300">✦</span>
-                <span class="text-sm font-semibold text-gray-300 uppercase tracking-widest">DB2</span>
+                <span class="text-xs sm:text-sm font-semibold text-gray-300 uppercase tracking-widest">AWS</span>
                 <span class="text-brand-300">✦</span>
-                <span class="text-sm font-semibold text-gray-300 uppercase tracking-widest">Jenkins</span>
+                <span class="text-xs sm:text-sm font-semibold text-gray-300 uppercase tracking-widest">GenAI</span>
                 <span class="text-brand-300">✦</span>
-                <span class="text-sm font-semibold text-gray-300 uppercase tracking-widest">Ansible</span>
+                <span class="text-xs sm:text-sm font-semibold text-gray-300 uppercase tracking-widest">Jenkins</span>
                 <span class="text-brand-300">✦</span>
-                <span class="text-sm font-semibold text-gray-300 uppercase tracking-widest">AWS</span>
+                <span class="text-xs sm:text-sm font-semibold text-gray-300 uppercase tracking-widest">SRE</span>
                 <span class="text-brand-300">✦</span>
-                <span class="text-sm font-semibold text-gray-300 uppercase tracking-widest">GCP</span>
-                <span class="text-brand-300">✦</span>
-                <span class="text-sm font-semibold text-gray-300 uppercase tracking-widest">Azure</span>
-                <span class="text-brand-300">✦</span>
-                <span class="text-sm font-semibold text-gray-300 uppercase tracking-widest">GenAI</span>
-                <span class="text-brand-300">✦</span>
-                <span class="text-sm font-semibold text-gray-300 uppercase tracking-widest">AppDynamics</span>
-                <span class="text-brand-300">✦</span>
-                <span class="text-sm font-semibold text-gray-300 uppercase tracking-widest">SRE</span>
-                <span class="text-brand-300">✦</span>
-                <span class="text-sm font-semibold text-gray-300 uppercase tracking-widest">ITIL 4</span>
-                <span class="text-brand-300">✦</span>
-                <span class="text-sm font-semibold text-gray-300 uppercase tracking-widest">Linux</span>
-                <span class="text-brand-300">✦</span>
-                <span class="text-sm font-semibold text-gray-300 uppercase tracking-widest">Shell Scripting</span>
+                <span class="text-xs sm:text-sm font-semibold text-gray-300 uppercase tracking-widest">Linux</span>
                 <span class="text-brand-300">✦</span>
             </div>
-            <div class="flex items-center gap-8 px-4">
-                <span class="text-sm font-semibold text-gray-300 uppercase tracking-widest">COBOL</span>
+            <div class="flex items-center gap-6 sm:gap-8 px-4">
+                <span class="text-xs sm:text-sm font-semibold text-gray-300 uppercase tracking-widest">Java 17</span>
+                <span class="text-blue-300">✦</span>
+                <span class="text-xs sm:text-sm font-semibold text-gray-300 uppercase tracking-widest">Spring Boot</span>
+                <span class="text-blue-300">✦</span>
+                <span class="text-xs sm:text-sm font-semibold text-gray-300 uppercase tracking-widest">Microservices</span>
+                <span class="text-blue-300">✦</span>
+                <span class="text-xs sm:text-sm font-semibold text-gray-300 uppercase tracking-widest">React JS</span>
+                <span class="text-blue-300">✦</span>
+                <span class="text-xs sm:text-sm font-semibold text-gray-300 uppercase tracking-widest">COBOL</span>
                 <span class="text-brand-300">✦</span>
-                <span class="text-sm font-semibold text-gray-300 uppercase tracking-widest">JCL</span>
+                <span class="text-xs sm:text-sm font-semibold text-gray-300 uppercase tracking-widest">DevOps</span>
                 <span class="text-brand-300">✦</span>
-                <span class="text-sm font-semibold text-gray-300 uppercase tracking-widest">DB2</span>
+                <span class="text-xs sm:text-sm font-semibold text-gray-300 uppercase tracking-widest">AWS</span>
                 <span class="text-brand-300">✦</span>
-                <span class="text-sm font-semibold text-gray-300 uppercase tracking-widest">Jenkins</span>
+                <span class="text-xs sm:text-sm font-semibold text-gray-300 uppercase tracking-widest">GenAI</span>
                 <span class="text-brand-300">✦</span>
-                <span class="text-sm font-semibold text-gray-300 uppercase tracking-widest">Ansible</span>
+                <span class="text-xs sm:text-sm font-semibold text-gray-300 uppercase tracking-widest">Jenkins</span>
                 <span class="text-brand-300">✦</span>
-                <span class="text-sm font-semibold text-gray-300 uppercase tracking-widest">AWS</span>
+                <span class="text-xs sm:text-sm font-semibold text-gray-300 uppercase tracking-widest">SRE</span>
                 <span class="text-brand-300">✦</span>
-                <span class="text-sm font-semibold text-gray-300 uppercase tracking-widest">GCP</span>
-                <span class="text-brand-300">✦</span>
-                <span class="text-sm font-semibold text-gray-300 uppercase tracking-widest">Azure</span>
-                <span class="text-brand-300">✦</span>
-                <span class="text-sm font-semibold text-gray-300 uppercase tracking-widest">GenAI</span>
-                <span class="text-brand-300">✦</span>
-                <span class="text-sm font-semibold text-gray-300 uppercase tracking-widest">AppDynamics</span>
-                <span class="text-brand-300">✦</span>
-                <span class="text-sm font-semibold text-gray-300 uppercase tracking-widest">SRE</span>
-                <span class="text-brand-300">✦</span>
-                <span class="text-sm font-semibold text-gray-300 uppercase tracking-widest">ITIL 4</span>
-                <span class="text-brand-300">✦</span>
-                <span class="text-sm font-semibold text-gray-300 uppercase tracking-widest">Linux</span>
-                <span class="text-brand-300">✦</span>
-                <span class="text-sm font-semibold text-gray-300 uppercase tracking-widest">Shell Scripting</span>
+                <span class="text-xs sm:text-sm font-semibold text-gray-300 uppercase tracking-widest">Linux</span>
                 <span class="text-brand-300">✦</span>
             </div>
         </div>
     </div>
 
     <!-- ========== ABOUT ========== -->
-    <section id="about" class="py-24 px-6">
+    <section id="about" class="py-16 sm:py-24 px-6">
         <div class="max-w-6xl mx-auto">
-            <div class="scroll-reveal text-center mb-16">
+            <div class="scroll-reveal text-center mb-12 sm:mb-16">
                 <span class="inline-block text-xs font-bold uppercase tracking-widest text-brand-500 bg-brand-50 border border-brand-100 rounded-full px-4 py-1.5 mb-4">About Me</span>
-                <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900">The Bridge Between <span class="gradient-text">Legacy & Future</span></h2>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-gray-900">Bridging <span class="gradient-text">Legacy & Future</span></h2>
             </div>
 
             <div class="grid lg:grid-cols-5 gap-8">
                 <div class="lg:col-span-3 scroll-reveal">
-                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 card-hover">
-                        <p class="text-gray-600 leading-relaxed text-base mb-5">
-                            I'm a <span class="text-gray-900 font-semibold">Results-oriented IT Analyst</span> who thrives at the intersection of legacy mainframe systems and cutting-edge DevOps practices within the Banking & Financial Services domain.
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 sm:p-8 card-hover">
+                        <p class="text-gray-600 leading-relaxed text-sm sm:text-base mb-5">
+                            Results-oriented <span class="text-gray-900 font-semibold">Information Technology Analyst</span> with 3.11 years of experience operating at the intersection of Legacy Mainframe systems and Modern DevOps practices within the Banking and Financial Services domain.
                         </p>
-                        <p class="text-gray-600 leading-relaxed text-base mb-5">
-                            What makes me unique? I don't just maintain old systems — I <span class="text-gray-900 font-semibold">modernize them</span>. With deep L2/L3 expertise in COBOL, JCL, and DB2 payment systems, I simultaneously drive the transition to Linux automation, CI/CD pipelines, and SRE principles.
+                        <p class="text-gray-600 leading-relaxed text-sm sm:text-base mb-5">
+                            Uniquely positioned for Mainframe Modernization initiatives, possessing deep L2/L3 expertise in COBOL, JCL, and DB2 Payment systems, while actively driving the transition to Linux automation, CI/CD pipelines, and SRE principles.
                         </p>
-                        <p class="text-gray-600 leading-relaxed text-base mb-8">
-                            I'm passionate about leveraging <span class="text-gray-900 font-semibold">Generative AI</span> to transform how we do Root Cause Analysis and continuously expanding into Cloud platforms and Infrastructure-as-code.
+                        <p class="text-gray-600 leading-relaxed text-sm sm:text-base mb-8">
+                            Expert in <span class="text-gray-900 font-semibold">Java 17+, Spring Boot, Microservices, and React JS</span>. Skilled in distributed systems and Performance optimization. Passionate about leveraging <span class="text-gray-900 font-semibold">Generative AI</span> to modernize Root Cause Analysis (RCA).
                         </p>
-                        <div class="grid grid-cols-2 gap-4">
-                            <div class="flex items-center gap-3 bg-brand-50/50 rounded-xl px-4 py-3">
+                        <div class="grid grid-cols-2 gap-3 sm:gap-4">
+                            <div class="flex items-center gap-3 bg-blue-50/50 rounded-xl px-3 py-2.5 sm:px-4 sm:py-3">
+                                <div class="w-8 h-8 rounded-lg bg-blue-500 flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="cpu" class="w-4 h-4 text-white"></i>
+                                </div>
+                                <span class="text-xs sm:text-sm font-medium text-gray-700">Java 17 Expert</span>
+                            </div>
+                            <div class="flex items-center gap-3 bg-brand-50/50 rounded-xl px-3 py-2.5 sm:px-4 sm:py-3">
                                 <div class="w-8 h-8 rounded-lg gradient-bg flex items-center justify-center flex-shrink-0">
                                     <i data-lucide="server" class="w-4 h-4 text-white"></i>
                                 </div>
-                                <span class="text-sm font-medium text-gray-700">Mainframe Expert</span>
+                                <span class="text-xs sm:text-sm font-medium text-gray-700">Mainframe Pro</span>
                             </div>
-                            <div class="flex items-center gap-3 bg-purple-50/50 rounded-xl px-4 py-3">
-                                <div class="w-8 h-8 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center flex-shrink-0">
-                                    <i data-lucide="container" class="w-4 h-4 text-white"></i>
+                            <div class="flex items-center gap-3 bg-purple-50/50 rounded-xl px-3 py-2.5 sm:px-4 sm:py-3">
+                                <div class="w-8 h-8 rounded-lg bg-purple-500 flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="cloud" class="w-4 h-4 text-white"></i>
                                 </div>
-                                <span class="text-sm font-medium text-gray-700">DevOps Bridge</span>
+                                <span class="text-xs sm:text-sm font-medium text-gray-700">Microservices</span>
                             </div>
-                            <div class="flex items-center gap-3 bg-amber-50/50 rounded-xl px-4 py-3">
-                                <div class="w-8 h-8 rounded-lg bg-gradient-to-r from-amber-500 to-orange-500 flex items-center justify-center flex-shrink-0">
+                            <div class="flex items-center gap-3 bg-amber-50/50 rounded-xl px-3 py-2.5 sm:px-4 sm:py-3">
+                                <div class="w-8 h-8 rounded-lg bg-amber-500 flex items-center justify-center flex-shrink-0">
                                     <i data-lucide="brain" class="w-4 h-4 text-white"></i>
                                 </div>
-                                <span class="text-sm font-medium text-gray-700">AI-Driven RCA</span>
-                            </div>
-                            <div class="flex items-center gap-3 bg-emerald-50/50 rounded-xl px-4 py-3">
-                                <div class="w-8 h-8 rounded-lg bg-gradient-to-r from-emerald-500 to-teal-500 flex items-center justify-center flex-shrink-0">
-                                    <i data-lucide="shield-check" class="w-4 h-4 text-white"></i>
-                                </div>
-                                <span class="text-sm font-medium text-gray-700">SRE Practices</span>
+                                <span class="text-xs sm:text-sm font-medium text-gray-700">AI-Driven RCA</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="lg:col-span-2 scroll-reveal space-y-4">
-                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 card-hover">
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-5 sm:p-6 card-hover">
                         <div class="flex items-center gap-3 mb-4">
-                            <div class="w-10 h-10 rounded-xl bg-brand-100 flex items-center justify-center">
-                                <i data-lucide="building-2" class="w-5 h-5 text-brand-600"></i>
+                            <div class="w-10 h-10 rounded-xl bg-blue-100 flex items-center justify-center">
+                                <i data-lucide="building-2" class="w-5 h-5 text-blue-600"></i>
                             </div>
                             <div>
                                 <p class="text-sm font-bold text-gray-900">NTT DATA</p>
                                 <p class="text-xs text-gray-400">Current Employer</p>
                             </div>
                         </div>
-                        <p class="text-xs text-gray-500 leading-relaxed">Leading mainframe-to-modern transformation for banking payment systems</p>
+                        <p class="text-xs text-gray-500 leading-relaxed">Driving mainframe-to-Java modernization and high-availability banking solutions.</p>
                     </div>
-                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 card-hover">
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-5 sm:p-6 card-hover">
                         <div class="flex items-center gap-3 mb-4">
                             <div class="w-10 h-10 rounded-xl bg-purple-100 flex items-center justify-center">
-                                <i data-lucide="landmark" class="w-5 h-5 text-purple-600"></i>
+                                <i data-lucide="code-2" class="w-5 h-5 text-purple-600"></i>
                             </div>
                             <div>
-                                <p class="text-sm font-bold text-gray-900">BFSI Domain</p>
-                                <p class="text-xs text-gray-400">Specialization</p>
+                                <p class="text-sm font-bold text-gray-900">Full Stack</p>
+                                <p class="text-xs text-gray-400">Tech Stack</p>
                             </div>
                         </div>
-                        <p class="text-xs text-gray-500 leading-relaxed">Corporate banking payments, high-volume financial data processing, zero-defect releases</p>
+                        <p class="text-xs text-gray-500 leading-relaxed">Java 17, Spring Boot, React JS, REST APIs, Microservices Architecture.</p>
                     </div>
-                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 card-hover">
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-5 sm:p-6 card-hover">
                         <div class="flex items-center gap-3 mb-4">
                             <div class="w-10 h-10 rounded-xl bg-amber-100 flex items-center justify-center">
-                                <i data-lucide="sparkles" class="w-5 h-5 text-amber-600"></i>
+                                <i data-lucide="shield-check" class="w-5 h-5 text-amber-600"></i>
                             </div>
                             <div>
-                                <p class="text-sm font-bold text-gray-900">GenAI Integration</p>
-                                <p class="text-xs text-gray-400">Innovation</p>
+                                <p class="text-sm font-bold text-gray-900">SRE & DevOps</p>
+                                <p class="text-xs text-gray-400">Operations</p>
                             </div>
                         </div>
-                        <p class="text-xs text-gray-500 leading-relaxed">Using generative AI to parse mainframe dump logs, automate RCA, and streamline SDLC docs</p>
+                        <p class="text-xs text-gray-500 leading-relaxed">CI/CD, Jenkins, Ansible, AppDynamics, ITIL 4, SSL Management.</p>
                     </div>
                 </div>
             </div>
@@ -465,22 +431,22 @@
     </section>
 
     <!-- ========== SKILLS ========== -->
-    <section id="skills" class="py-24 px-6 gradient-bg-soft relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-64 h-64 bg-brand-200/20 rounded-full blur-3xl pointer-events-none"></div>
+    <section id="skills" class="py-16 sm:py-24 px-6 gradient-bg-soft relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-blue-200/20 rounded-full blur-3xl pointer-events-none"></div>
         <div class="absolute bottom-0 left-0 w-64 h-64 bg-purple-200/20 rounded-full blur-3xl pointer-events-none"></div>
 
         <div class="max-w-6xl mx-auto relative z-10">
-            <div class="scroll-reveal text-center mb-12">
+            <div class="scroll-reveal text-center mb-8 sm:mb-12">
                 <span class="inline-block text-xs font-bold uppercase tracking-widest text-brand-500 bg-white border border-brand-100 rounded-full px-4 py-1.5 mb-4">Tech Stack</span>
-                <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900">Skills & Technologies</h2>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-gray-900">Skills & Technologies</h2>
             </div>
 
-            <div class="scroll-reveal flex flex-wrap justify-center gap-2 mb-10">
-                <button class="skill-tab tab-active text-xs font-semibold px-5 py-2.5 rounded-full border border-transparent transition-all" data-tab="all">All Skills</button>
-                <button class="skill-tab text-xs font-semibold text-gray-500 bg-white px-5 py-2.5 rounded-full border border-gray-200 hover:border-brand-300 transition-all" data-tab="devops">DevOps & Cloud</button>
-                <button class="skill-tab text-xs font-semibold text-gray-500 bg-white px-5 py-2.5 rounded-full border border-gray-200 hover:border-brand-300 transition-all" data-tab="mainframe">Mainframe</button>
-                <button class="skill-tab text-xs font-semibold text-gray-500 bg-white px-5 py-2.5 rounded-full border border-gray-200 hover:border-brand-300 transition-all" data-tab="db">Database</button>
-                <button class="skill-tab text-xs font-semibold text-gray-500 bg-white px-5 py-2.5 rounded-full border border-gray-200 hover:border-brand-300 transition-all" data-tab="ai">AI & SRE</button>
+            <div class="scroll-reveal flex flex-wrap justify-center gap-2 mb-8 sm:mb-10">
+                <button class="skill-tab tab-active text-xs font-semibold px-4 sm:px-5 py-2 sm:py-2.5 rounded-full border border-transparent transition-all" data-tab="all">All Skills</button>
+                <button class="skill-tab text-xs font-semibold text-gray-500 bg-white px-4 sm:px-5 py-2 sm:py-2.5 rounded-full border border-gray-200 hover:border-brand-300 transition-all" data-tab="backend">Java & Backend</button>
+                <button class="skill-tab text-xs font-semibold text-gray-500 bg-white px-4 sm:px-5 py-2 sm:py-2.5 rounded-full border border-gray-200 hover:border-brand-300 transition-all" data-tab="devops">DevOps & Cloud</button>
+                <button class="skill-tab text-xs font-semibold text-gray-500 bg-white px-4 sm:px-5 py-2 sm:py-2.5 rounded-full border border-gray-200 hover:border-brand-300 transition-all" data-tab="mainframe">Mainframe</button>
+                <button class="skill-tab text-xs font-semibold text-gray-500 bg-white px-4 sm:px-5 py-2 sm:py-2.5 rounded-full border border-gray-200 hover:border-brand-300 transition-all" data-tab="ai">AI & SRE</button>
             </div>
 
             <div class="scroll-reveal" id="skillsGrid"></div>
@@ -488,30 +454,30 @@
     </section>
 
     <!-- ========== EXPERIENCE ========== -->
-    <section id="experience" class="py-24 px-6">
+    <section id="experience" class="py-16 sm:py-24 px-6">
         <div class="max-w-6xl mx-auto">
-            <div class="scroll-reveal text-center mb-16">
+            <div class="scroll-reveal text-center mb-12 sm:mb-16">
                 <span class="inline-block text-xs font-bold uppercase tracking-widest text-brand-500 bg-brand-50 border border-brand-100 rounded-full px-4 py-1.5 mb-4">Career</span>
-                <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900">Work Experience</h2>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-gray-900">Work Experience</h2>
             </div>
 
             <div class="max-w-4xl mx-auto">
-                <div class="scroll-reveal mb-12">
+                <div class="scroll-reveal mb-8 sm:mb-12">
                     <div class="gradient-bg rounded-2xl p-1">
-                        <div class="bg-white rounded-[14px] p-6 md:p-8">
-                            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                                <div class="flex items-center gap-4">
-                                    <div class="w-14 h-14 rounded-2xl bg-brand-50 border border-brand-100 flex items-center justify-center">
-                                        <i data-lucide="building-2" class="w-7 h-7 text-brand-600"></i>
+                        <div class="bg-white rounded-[14px] p-5 sm:p-6 md:p-8">
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 sm:gap-4">
+                                <div class="flex items-center gap-3 sm:gap-4">
+                                    <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-brand-50 border border-brand-100 flex items-center justify-center">
+                                        <i data-lucide="building-2" class="w-6 h-6 sm:w-7 sm:h-7 text-brand-600"></i>
                                     </div>
                                     <div>
-                                        <h3 class="text-xl font-display font-bold text-gray-900">NTT DATA</h3>
-                                        <p class="text-sm text-gray-400">Information Technology Analyst</p>
+                                        <h3 class="text-lg sm:text-xl font-display font-bold text-gray-900">NTT DATA</h3>
+                                        <p class="text-xs sm:text-sm text-gray-400">Information Technology Analyst</p>
                                     </div>
                                 </div>
-                                <div class="flex items-center gap-2 bg-brand-50 border border-brand-100 rounded-full px-4 py-2 w-fit">
-                                    <i data-lucide="calendar" class="w-4 h-4 text-brand-500"></i>
-                                    <span class="text-sm font-semibold text-brand-700">Jun 2022 — Present</span>
+                                <div class="flex items-center gap-2 bg-brand-50 border border-brand-100 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 w-fit">
+                                    <i data-lucide="calendar" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-brand-500"></i>
+                                    <span class="text-xs sm:text-sm font-semibold text-brand-700">Jun 2022 — Present</span>
                                 </div>
                             </div>
                         </div>
@@ -519,72 +485,126 @@
                 </div>
 
                 <div class="relative">
-                    <div class="absolute left-6 md:left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-brand-300 via-purple-300 to-gray-200"></div>
+                    <div class="absolute left-6 md:left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-brand-300 via-blue-300 to-gray-200"></div>
 
-                    <div class="relative pl-16 md:pl-20 pb-14 scroll-reveal">
+                    <!-- Role 1 -->
+                    <div class="relative pl-12 sm:pl-16 md:pl-20 pb-10 sm:pb-14 scroll-reveal">
                         <div class="timeline-dot absolute left-4 md:left-6 top-2 w-5 h-5 rounded-full gradient-bg border-4 border-white shadow-lg cursor-pointer z-10"></div>
-                        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-8 card-hover">
-                            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-6">
+                        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-5 sm:p-6 md:p-8 card-hover">
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-5 sm:mb-6">
                                 <div>
-                                    <h3 class="text-lg font-display font-bold text-gray-900">Senior Information Technology Analyst</h3>
-                                    <p class="text-sm text-gray-400">L3 Escalation · AI-Driven Support</p>
+                                    <h3 class="text-base sm:text-lg font-display font-bold text-gray-900">Senior Information Technology Analyst</h3>
+                                    <p class="text-xs sm:text-sm text-gray-400">Java, Microservices, AI-Driven Support</p>
                                 </div>
-                                <span class="gradient-bg text-white text-xs font-bold px-3 py-1.5 rounded-full w-fit">Apr 2025 — Present</span>
+                                <span class="gradient-bg text-white text-[10px] sm:text-xs font-bold px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full w-fit">Apr 2025 — Present</span>
                             </div>
-                            <div class="space-y-4">
+                            <div class="space-y-3 sm:space-y-4">
                                 <div class="flex gap-3">
-                                    <div class="w-6 h-6 rounded-lg bg-brand-50 flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="arrow-right" class="w-3 h-3 text-brand-500"></i></div>
-                                    <p class="text-sm text-gray-600 leading-relaxed"><span class="font-semibold text-gray-800">Cross-Platform Automation:</span> Orchestrated automated workflows connecting Mainframe batch outputs with Linux servers using Shell & PowerShell for report generation.</p>
+                                    <div class="w-6 h-6 rounded-lg bg-blue-50 flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="arrow-right" class="w-3 h-3 text-blue-500"></i></div>
+                                    <p class="text-xs sm:text-sm text-gray-600 leading-relaxed"><span class="font-semibold text-gray-800">Cross-Platform Automation:</span> Bridge legacy and modern environments by orchestrating automated workflows connecting Mainframe batch outputs with Linux servers using Shell scripting and PowerShell.</p>
+                                </div>
+                                <div class="flex gap-3">
+                                    <div class="w-6 h-6 rounded-lg bg-blue-50 flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="arrow-right" class="w-3 h-3 text-blue-500"></i></div>
+                                    <p class="text-xs sm:text-sm text-gray-600 leading-relaxed"><span class="font-semibold text-gray-800">Java Microservices Development:</span> Developed scalable microservices using Java 17 and Spring Boot for secure banking applications, optimizing RESTful APIs for improved response time.</p>
                                 </div>
                                 <div class="flex gap-3">
                                     <div class="w-6 h-6 rounded-lg bg-purple-50 flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="arrow-right" class="w-3 h-3 text-purple-500"></i></div>
-                                    <p class="text-sm text-gray-600 leading-relaxed"><span class="font-semibold text-gray-800">AI-Driven RCA:</span> Final L3 escalation for critical banking payment failures; leveraging GenAI to parse dump logs and automate SDLC documentation.</p>
+                                    <p class="text-xs sm:text-sm text-gray-600 leading-relaxed"><span class="font-semibold text-gray-800">AI-Driven Modernization:</span> Worked L3 escalation for critical banking payment failures; actively leveraging Generative AI tools to parse Mainframe dump logs, accelerating Root Cause Analysis (RCA).</p>
                                 </div>
                                 <div class="flex gap-3">
                                     <div class="w-6 h-6 rounded-lg bg-amber-50 flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="arrow-right" class="w-3 h-3 text-amber-500"></i></div>
-                                    <p class="text-sm text-gray-600 leading-relaxed"><span class="font-semibold text-gray-800">Database Tuning:</span> Advanced SQL Performance Tuning across DB2 (Mainframe) and Oracle/Exadata for high-volume financial processing.</p>
+                                    <p class="text-xs sm:text-sm text-gray-600 leading-relaxed"><span class="font-semibold text-gray-800">Database & Performance:</span> Performed advanced SQL Performance Tuning across DB2 (Mainframe) and Oracle/Exadata, utilizing efficient queries, debugging, and caching strategies.</p>
                                 </div>
                                 <div class="flex gap-3">
                                     <div class="w-6 h-6 rounded-lg bg-emerald-50 flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="arrow-right" class="w-3 h-3 text-emerald-500"></i></div>
-                                    <p class="text-sm text-gray-600 leading-relaxed"><span class="font-semibold text-gray-800">SRE & Monitoring:</span> AppDynamics + Kibana to monitor Z/OS and Linux stacks, proactively identifying bottlenecks before business impact.</p>
+                                    <p class="text-xs sm:text-sm text-gray-600 leading-relaxed"><span class="font-semibold text-gray-800">SRE & Agile:</span> Implemented SRE practices using AppDynamics and Kibana, collaborated with cross-functional Agile teams on code reviews and CI/CD pipelines.</p>
                                 </div>
                                 <div class="flex gap-3">
                                     <div class="w-6 h-6 rounded-lg bg-rose-50 flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="arrow-right" class="w-3 h-3 text-rose-500"></i></div>
-                                    <p class="text-sm text-gray-600 leading-relaxed"><span class="font-semibold text-gray-800">Security:</span> End-to-end SSL certificate lifecycle management & Connect Direct REXX for secure data transfers with zero-downtime.</p>
+                                    <p class="text-xs sm:text-sm text-gray-600 leading-relaxed"><span class="font-semibold text-gray-800">Security & Integrations:</span> Led secure data transfers via Connect Direct REXX, managed SSL certificates, and led integration of Fraud net to strengthen fraud detection capabilities.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="relative pl-16 md:pl-20 pb-4 scroll-reveal">
+                    <!-- Role 2 -->
+                    <div class="relative pl-12 sm:pl-16 md:pl-20 pb-4 scroll-reveal">
                         <div class="timeline-dot absolute left-4 md:left-6 top-2 w-5 h-5 rounded-full bg-gray-300 border-4 border-white shadow-lg cursor-pointer z-10"></div>
-                        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-8 card-hover">
-                            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-6">
+                        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-5 sm:p-6 md:p-8 card-hover">
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-5 sm:mb-6">
                                 <div>
-                                    <h3 class="text-lg font-display font-bold text-gray-900">Senior Associate IT</h3>
-                                    <p class="text-sm text-gray-400">L2 Production Support · Mainframe</p>
+                                    <h3 class="text-base sm:text-lg font-display font-bold text-gray-900">Senior Associate Information Technology</h3>
+                                    <p class="text-xs sm:text-sm text-gray-400">L2/L3 Production Support · Mainframe</p>
                                 </div>
-                                <span class="bg-gray-100 text-gray-600 text-xs font-bold px-3 py-1.5 rounded-full w-fit">Jun 2022 — Apr 2025</span>
+                                <span class="bg-gray-100 text-gray-600 text-[10px] sm:text-xs font-bold px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full w-fit">Jun 2022 — Apr 2025</span>
                             </div>
-                            <div class="space-y-4">
+                            <div class="space-y-3 sm:space-y-4">
                                 <div class="flex gap-3">
                                     <div class="w-6 h-6 rounded-lg bg-gray-50 flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="arrow-right" class="w-3 h-3 text-gray-400"></i></div>
-                                    <p class="text-sm text-gray-600 leading-relaxed"><span class="font-semibold text-gray-800">Production Support:</span> Managed heavy daily batch processing for corporate banking, resolved complex JCL/COBOL abends (SOC7/S0C4) via OPC/A and CA-7.</p>
+                                    <p class="text-xs sm:text-sm text-gray-600 leading-relaxed"><span class="font-semibold text-gray-800">Mainframe Support:</span> Managed heavy daily batch processing, troubleshooting complex JCL/COBOL abends (SOC7/S0C4) and analyzing job logs via OPC/A and CA-7.</p>
                                 </div>
                                 <div class="flex gap-3">
                                     <div class="w-6 h-6 rounded-lg bg-gray-50 flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="arrow-right" class="w-3 h-3 text-gray-400"></i></div>
-                                    <p class="text-sm text-gray-600 leading-relaxed"><span class="font-semibold text-gray-800">SDLC & Deployment:</span> Code movement through Endeavor, deployment packages, data mocking, system testing via Xpeditor & File-Aid for zero-defect releases.</p>
+                                    <p class="text-xs sm:text-sm text-gray-600 leading-relaxed"><span class="font-semibold text-gray-800">SDLC & Architecture:</span> Managed code movement pipelines, collaborated to design scalable and secure system architecture, and performed rigorous system testing via Xpeditor.</p>
                                 </div>
                                 <div class="flex gap-3">
                                     <div class="w-6 h-6 rounded-lg bg-gray-50 flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="arrow-right" class="w-3 h-3 text-gray-400"></i></div>
-                                    <p class="text-sm text-gray-600 leading-relaxed"><span class="font-semibold text-gray-800">ITIL Processes:</span> Incident, Problem & Change management via ServiceNow/Jira, maintaining strict SLA compliance with weekend/night production support.</p>
+                                    <p class="text-xs sm:text-sm text-gray-600 leading-relaxed"><span class="font-semibold text-gray-800">Database & Utilities:</span> Modified SQL code, utilized File-Aid DB2, and used IBM Utilities (IEBGENR, DFSORT) for large-scale file processing.</p>
                                 </div>
                                 <div class="flex gap-3">
                                     <div class="w-6 h-6 rounded-lg bg-gray-50 flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="arrow-right" class="w-3 h-3 text-gray-400"></i></div>
-                                    <p class="text-sm text-gray-600 leading-relaxed"><span class="font-semibold text-gray-800">Modernization Drive:</span> Identified manual tasks and proposed Linux/Shell scripting alternatives, driving system modernization from the ground up.</p>
+                                    <p class="text-xs sm:text-sm text-gray-600 leading-relaxed"><span class="font-semibold text-gray-800">ITIL & Improvement:</span> Executed Incident/Change management via ServiceNow/Jira and developed real-time monitoring solutions to drive system modernization.</p>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PROJECTS ========== -->
+    <section id="projects" class="py-16 sm:py-24 px-6 gradient-bg-soft relative overflow-hidden">
+        <div class="max-w-6xl mx-auto relative z-10">
+            <div class="scroll-reveal text-center mb-12 sm:mb-16">
+                <span class="inline-block text-xs font-bold uppercase tracking-widest text-brand-500 bg-white border border-brand-100 rounded-full px-4 py-1.5 mb-4">Highlights</span>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-gray-900">Key Project Highlights</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="scroll-reveal bg-white rounded-2xl shadow-sm border border-gray-100 p-6 card-hover flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-xl gradient-bg flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="layers" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Microservices Banking Applications</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">Built scalable microservices-based banking applications using Java 17 and Spring Boot to ensure high availability and security.</p>
+                    </div>
+                </div>
+                <div class="scroll-reveal bg-white rounded-2xl shadow-sm border border-gray-100 p-6 card-hover flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-blue-500 flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="git-merge" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Distributed Integrations</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">Implemented distributed integrations connecting multiple backend services and third-party APIs in a robust architecture.</p>
+                    </div>
+                </div>
+                <div class="scroll-reveal bg-white rounded-2xl shadow-sm border border-gray-100 p-6 card-hover flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500 flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="activity" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">ELK Stack Monitoring</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">Utilized ELK Stack (Kibana) for advanced logging and monitoring, enabling proactive system performance tracking.</p>
+                    </div>
+                </div>
+                <div class="scroll-reveal bg-white rounded-2xl shadow-sm border border-gray-100 p-6 card-hover flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500 flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="zap" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Performance Optimization</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">Optimized system performance through efficient queries, caching strategies, and debugging for faster response times.</p>
                     </div>
                 </div>
             </div>
@@ -592,114 +612,114 @@
     </section>
 
     <!-- ========== CERTIFICATIONS ========== -->
-    <section id="certifications" class="py-24 px-6">
+    <section id="certifications" class="py-16 sm:py-24 px-6">
         <div class="max-w-6xl mx-auto">
-            <div class="scroll-reveal text-center mb-16">
+            <div class="scroll-reveal text-center mb-12 sm:mb-16">
                 <span class="inline-block text-xs font-bold uppercase tracking-widest text-brand-500 bg-brand-50 border border-brand-100 rounded-full px-4 py-1.5 mb-4">Achievements</span>
-                <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900">Certifications</h2>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-gray-900">Certifications</h2>
             </div>
 
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-5xl mx-auto">
-                <div class="scroll-reveal bg-white rounded-2xl shadow-sm border border-gray-100 p-6 card-hover text-center group">
-                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-brand-100 to-purple-100 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                        <i data-lucide="brain" class="w-8 h-8 text-brand-600"></i>
+            <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 max-w-5xl mx-auto">
+                <div class="scroll-reveal bg-white rounded-2xl shadow-sm border border-gray-100 p-4 sm:p-6 card-hover text-center group">
+                    <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-brand-100 to-purple-100 flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:scale-110 transition-transform">
+                        <i data-lucide="brain" class="w-7 h-7 sm:w-8 sm:h-8 text-brand-600"></i>
                     </div>
-                    <h4 class="font-display font-bold text-gray-900 text-sm mb-1">GenAI Yellow Belt</h4>
-                    <p class="text-xs text-gray-400">Level 1 Certified</p>
+                    <h4 class="font-display font-bold text-gray-900 text-xs sm:text-sm mb-1">GenAI Yellow Belt</h4>
+                    <p class="text-[10px] sm:text-xs text-gray-400">Level 1 Certified</p>
                 </div>
-                <div class="scroll-reveal bg-white rounded-2xl shadow-sm border border-gray-100 p-6 card-hover text-center group">
-                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-100 to-pink-100 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                        <i data-lucide="sparkles" class="w-8 h-8 text-purple-600"></i>
+                <div class="scroll-reveal bg-white rounded-2xl shadow-sm border border-gray-100 p-4 sm:p-6 card-hover text-center group">
+                    <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-purple-100 to-pink-100 flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:scale-110 transition-transform">
+                        <i data-lucide="sparkles" class="w-7 h-7 sm:w-8 sm:h-8 text-purple-600"></i>
                     </div>
-                    <h4 class="font-display font-bold text-gray-900 text-sm mb-1">GenAI White Belt</h4>
-                    <p class="text-xs text-gray-400">Foundation Certified</p>
+                    <h4 class="font-display font-bold text-gray-900 text-xs sm:text-sm mb-1">GenAI White Belt</h4>
+                    <p class="text-[10px] sm:text-xs text-gray-400">Foundation Certified</p>
                 </div>
-                <div class="scroll-reveal bg-white rounded-2xl shadow-sm border border-gray-100 p-6 card-hover text-center group">
-                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-100 to-teal-100 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                        <i data-lucide="gauge" class="w-8 h-8 text-emerald-600"></i>
+                <div class="scroll-reveal bg-white rounded-2xl shadow-sm border border-gray-100 p-4 sm:p-6 card-hover text-center group">
+                    <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-emerald-100 to-teal-100 flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:scale-110 transition-transform">
+                        <i data-lucide="gauge" class="w-7 h-7 sm:w-8 sm:h-8 text-emerald-600"></i>
                     </div>
-                    <h4 class="font-display font-bold text-gray-900 text-sm mb-1">SRE Foundation</h4>
-                    <p class="text-xs text-gray-400">Site Reliability Engineering</p>
+                    <h4 class="font-display font-bold text-gray-900 text-xs sm:text-sm mb-1">SRE Foundation</h4>
+                    <p class="text-[10px] sm:text-xs text-gray-400">Site Reliability</p>
                 </div>
-                <div class="scroll-reveal bg-white rounded-2xl shadow-sm border border-gray-100 p-6 card-hover text-center group">
-                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-100 to-orange-100 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                        <i data-lucide="shield" class="w-8 h-8 text-amber-600"></i>
+                <div class="scroll-reveal bg-white rounded-2xl shadow-sm border border-gray-100 p-4 sm:p-6 card-hover text-center group">
+                    <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-amber-100 to-orange-100 flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:scale-110 transition-transform">
+                        <i data-lucide="shield" class="w-7 h-7 sm:w-8 sm:h-8 text-amber-600"></i>
                     </div>
-                    <h4 class="font-display font-bold text-gray-900 text-sm mb-1">ITIL 4 Foundation</h4>
-                    <p class="text-xs text-gray-400">IT Service Management</p>
+                    <h4 class="font-display font-bold text-gray-900 text-xs sm:text-sm mb-1">ITIL 4 Foundation</h4>
+                    <p class="text-[10px] sm:text-xs text-gray-400">IT Service Mgmt</p>
                 </div>
-                <div class="scroll-reveal bg-white rounded-2xl shadow-sm border border-gray-100 p-6 card-hover text-center group">
-                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-100 to-indigo-100 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                        <i data-lucide="code" class="w-8 h-8 text-blue-600"></i>
+                <div class="scroll-reveal bg-white rounded-2xl shadow-sm border border-gray-100 p-4 sm:p-6 card-hover text-center group">
+                    <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-blue-100 to-indigo-100 flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:scale-110 transition-transform">
+                        <i data-lucide="code" class="w-7 h-7 sm:w-8 sm:h-8 text-blue-600"></i>
                     </div>
-                    <h4 class="font-display font-bold text-gray-900 text-sm mb-1">Sr. App Developer</h4>
-                    <p class="text-xs text-gray-400">Application Development</p>
+                    <h4 class="font-display font-bold text-gray-900 text-xs sm:text-sm mb-1">Sr. App Developer</h4>
+                    <p class="text-[10px] sm:text-xs text-gray-400">App Development</p>
                 </div>
-                <div class="scroll-reveal bg-white rounded-2xl shadow-sm border border-gray-100 p-6 card-hover text-center group">
-                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-rose-100 to-red-100 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                        <i data-lucide="server" class="w-8 h-8 text-rose-600"></i>
+                <div class="scroll-reveal bg-white rounded-2xl shadow-sm border border-gray-100 p-4 sm:p-6 card-hover text-center group">
+                    <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-rose-100 to-red-100 flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:scale-110 transition-transform">
+                        <i data-lucide="server" class="w-7 h-7 sm:w-8 sm:h-8 text-rose-600"></i>
                     </div>
-                    <h4 class="font-display font-bold text-gray-900 text-sm mb-1">Mainframe Dev L2</h4>
-                    <p class="text-xs text-gray-400">COBOL/JCL/DB2</p>
+                    <h4 class="font-display font-bold text-gray-900 text-xs sm:text-sm mb-1">Mainframe Dev L2</h4>
+                    <p class="text-[10px] sm:text-xs text-gray-400">COBOL/JCL/DB2</p>
                 </div>
-                <div class="scroll-reveal bg-white rounded-2xl shadow-sm border border-gray-100 p-6 card-hover text-center group">
-                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-100 to-blue-100 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                        <i data-lucide="test-tubes" class="w-8 h-8 text-cyan-600"></i>
+                <div class="scroll-reveal bg-white rounded-2xl shadow-sm border border-gray-100 p-4 sm:p-6 card-hover text-center group">
+                    <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-cyan-100 to-blue-100 flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:scale-110 transition-transform">
+                        <i data-lucide="test-tubes" class="w-7 h-7 sm:w-8 sm:h-8 text-cyan-600"></i>
                     </div>
-                    <h4 class="font-display font-bold text-gray-900 text-sm mb-1">Test Engineer</h4>
-                    <p class="text-xs text-gray-400">Testing Practitioner</p>
+                    <h4 class="font-display font-bold text-gray-900 text-xs sm:text-sm mb-1">Test Engineer</h4>
+                    <p class="text-[10px] sm:text-xs text-gray-400">Testing Practitioner</p>
                 </div>
-                <div class="scroll-reveal bg-white rounded-2xl shadow-sm border border-gray-100 p-6 card-hover text-center group">
-                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-violet-100 to-purple-100 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                        <i data-lucide="bar-chart-3" class="w-8 h-8 text-violet-600"></i>
+                <div class="scroll-reveal bg-white rounded-2xl shadow-sm border border-gray-100 p-4 sm:p-6 card-hover text-center group">
+                    <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-violet-100 to-purple-100 flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:scale-110 transition-transform">
+                        <i data-lucide="bar-chart-3" class="w-7 h-7 sm:w-8 sm:h-8 text-violet-600"></i>
                     </div>
-                    <h4 class="font-display font-bold text-gray-900 text-sm mb-1">Business Analyst L1</h4>
-                    <p class="text-xs text-gray-400">Internal BA Certified</p>
+                    <h4 class="font-display font-bold text-gray-900 text-xs sm:text-sm mb-1">Business Analyst L1</h4>
+                    <p class="text-[10px] sm:text-xs text-gray-400">Internal BA Cert</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ========== EDUCATION ========== -->
-    <section id="education" class="py-24 px-6 gradient-bg-soft relative overflow-hidden">
+    <section id="education" class="py-16 sm:py-24 px-6 gradient-bg-soft relative overflow-hidden">
         <div class="max-w-6xl mx-auto relative z-10">
-            <div class="scroll-reveal text-center mb-16">
+            <div class="scroll-reveal text-center mb-12 sm:mb-16">
                 <span class="inline-block text-xs font-bold uppercase tracking-widest text-brand-500 bg-white border border-brand-100 rounded-full px-4 py-1.5 mb-4">Education</span>
-                <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900">Academic Background</h2>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-gray-900">Academic Background</h2>
             </div>
-            <div class="max-w-3xl mx-auto space-y-5">
-                <div class="scroll-reveal bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-8 card-hover">
+            <div class="max-w-3xl mx-auto space-y-4 sm:space-y-5">
+                <div class="scroll-reveal bg-white rounded-2xl shadow-sm border border-gray-100 p-5 sm:p-6 md:p-8 card-hover">
                     <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                        <div class="flex items-center gap-4">
-                            <div class="w-14 h-14 rounded-2xl gradient-bg flex items-center justify-center flex-shrink-0">
-                                <i data-lucide="graduation-cap" class="w-7 h-7 text-white"></i>
+                        <div class="flex items-center gap-3 sm:gap-4">
+                            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl gradient-bg flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="graduation-cap" class="w-6 h-6 sm:w-7 sm:h-7 text-white"></i>
                             </div>
                             <div>
-                                <h3 class="font-display font-bold text-gray-900">B.Tech — Computer Science</h3>
-                                <p class="text-sm text-gray-400">Greater Noida Institute of Technology</p>
-                                <p class="text-xs text-gray-300 mt-0.5">2019 — 2022</p>
+                                <h3 class="text-base sm:text-lg font-display font-bold text-gray-900">B.Tech — Computer Science</h3>
+                                <p class="text-xs sm:text-sm text-gray-400">Greater Noida Institute of Technology</p>
+                                <p class="text-[10px] sm:text-xs text-gray-300 mt-0.5">2019 — 2022</p>
                             </div>
                         </div>
-                        <div class="bg-brand-50 border border-brand-100 rounded-xl px-5 py-3 text-center">
-                            <p class="text-2xl font-display font-bold text-brand-600">74%</p>
+                        <div class="bg-brand-50 border border-brand-100 rounded-xl px-4 sm:px-5 py-2.5 sm:py-3 text-center">
+                            <p class="text-xl sm:text-2xl font-display font-bold text-brand-600">74%</p>
                             <p class="text-[10px] text-gray-400 uppercase tracking-wider font-semibold">Score</p>
                         </div>
                     </div>
                 </div>
-                <div class="scroll-reveal bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-8 card-hover">
+                <div class="scroll-reveal bg-white rounded-2xl shadow-sm border border-gray-100 p-5 sm:p-6 md:p-8 card-hover">
                     <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                        <div class="flex items-center gap-4">
-                            <div class="w-14 h-14 rounded-2xl bg-gray-100 flex items-center justify-center flex-shrink-0">
-                                <i data-lucide="book-open" class="w-7 h-7 text-gray-500"></i>
+                        <div class="flex items-center gap-3 sm:gap-4">
+                            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gray-100 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="book-open" class="w-6 h-6 sm:w-7 sm:h-7 text-gray-500"></i>
                             </div>
                             <div>
-                                <h3 class="font-display font-bold text-gray-900">Diploma — Computer Science</h3>
-                                <p class="text-sm text-gray-400">PM Polytechnic</p>
-                                <p class="text-xs text-gray-300 mt-0.5">2015 — 2018</p>
+                                <h3 class="text-base sm:text-lg font-display font-bold text-gray-900">Diploma — Computer Science</h3>
+                                <p class="text-xs sm:text-sm text-gray-400">PM Polytechnic</p>
+                                <p class="text-[10px] sm:text-xs text-gray-300 mt-0.5">2015 — 2018</p>
                             </div>
                         </div>
-                        <div class="bg-gray-50 border border-gray-200 rounded-xl px-5 py-3 text-center">
-                            <p class="text-2xl font-display font-bold text-gray-600">69%</p>
+                        <div class="bg-gray-50 border border-gray-200 rounded-xl px-4 sm:px-5 py-2.5 sm:py-3 text-center">
+                            <p class="text-xl sm:text-2xl font-display font-bold text-gray-600">69.09%</p>
                             <p class="text-[10px] text-gray-400 uppercase tracking-wider font-semibold">Score</p>
                         </div>
                     </div>
@@ -708,58 +728,56 @@
         </div>
     </section>
 
-    <!-- ========== CONTACT (No Form) ========== -->
-    <section id="contact" class="py-24 px-6">
+    <!-- ========== CONTACT ========== -->
+    <section id="contact" class="py-16 sm:py-24 px-6">
         <div class="max-w-6xl mx-auto">
-            <div class="scroll-reveal text-center mb-16">
+            <div class="scroll-reveal text-center mb-12 sm:mb-16">
                 <span class="inline-block text-xs font-bold uppercase tracking-widest text-brand-500 bg-brand-50 border border-brand-100 rounded-full px-4 py-1.5 mb-4">Let's Talk</span>
-                <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900">Get in Touch</h2>
-                <p class="text-gray-400 mt-4 max-w-md mx-auto">Looking for Mainframe Modernization expertise? Reach out directly or grab my resume.</p>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-gray-900">Get in Touch</h2>
+                <p class="text-gray-400 mt-4 max-w-md mx-auto text-sm sm:text-base">Looking for a Java/Mainframe expert? Reach out directly.</p>
             </div>
 
             <div class="max-w-4xl mx-auto">
-                <!-- Resume Download CTA — Big -->
-                <div class="scroll-reveal mb-8">
+                <div class="scroll-reveal mb-6 sm:mb-8">
                     <div class="gradient-bg rounded-2xl p-1">
-                        <div class="bg-white rounded-[14px] p-8 md:p-10 flex flex-col md:flex-row items-center gap-6 md:gap-10">
-                            <div class="w-20 h-20 rounded-2xl gradient-bg flex items-center justify-center flex-shrink-0">
-                                <i data-lucide="file-text" class="w-10 h-10 text-white"></i>
+                        <div class="bg-white rounded-[14px] p-6 sm:p-8 md:p-10 flex flex-col md:flex-row items-center gap-5 sm:gap-6 md:gap-10">
+                            <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl gradient-bg flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="file-text" class="w-8 h-8 sm:w-10 sm:h-10 text-white"></i>
                             </div>
                             <div class="flex-1 text-center md:text-left">
-                                <h3 class="text-xl md:text-2xl font-display font-bold text-gray-900 mb-2">Download My Resume</h3>
-                                <p class="text-sm text-gray-400 leading-relaxed">Get a complete overview of my experience, skills, certifications, and projects in one PDF. Ready to share with your hiring team.</p>
+                                <h3 class="text-lg sm:text-xl md:text-2xl font-display font-bold text-gray-900 mb-1 sm:mb-2">Download My Resume</h3>
+                                <p class="text-xs sm:text-sm text-gray-400 leading-relaxed">Get a complete overview of my experience in Java, Mainframe, and DevOps.</p>
                             </div>
-                            <a href="resume.pdf" download class="resume-btn-glow gradient-bg text-white font-bold px-8 py-4 rounded-xl magnetic-btn inline-flex items-center gap-3 text-sm flex-shrink-0">
+                            <a href="resume.pdf" download class="resume-btn-glow gradient-bg text-white font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-xl magnetic-btn inline-flex items-center gap-2 sm:gap-3 text-xs sm:text-sm flex-shrink-0">
                                 <span class="relative z-10 flex items-center gap-2">
-                                    <i data-lucide="download" class="w-5 h-5"></i> Download PDF
+                                    <i data-lucide="download" class="w-4 h-4 sm:w-5 sm:h-5"></i> Download PDF
                                 </span>
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Contact Cards Grid -->
-                <div class="grid sm:grid-cols-3 gap-5">
-                    <a href="mailto:shrivastavankur99@gmail.com" class="scroll-reveal flex flex-col items-center text-center bg-white rounded-2xl shadow-sm border border-gray-100 p-6 card-hover group">
-                        <div class="w-14 h-14 rounded-2xl gradient-bg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                            <i data-lucide="mail" class="w-6 h-6 text-white"></i>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5">
+                    <a href="mailto:shrivastavankur99@gmail.com" class="scroll-reveal flex flex-col items-center text-center bg-white rounded-2xl shadow-sm border border-gray-100 p-5 sm:p-6 card-hover group">
+                        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl gradient-bg flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform">
+                            <i data-lucide="mail" class="w-5 h-5 sm:w-6 sm:h-6 text-white"></i>
                         </div>
                         <p class="text-[10px] uppercase tracking-wider text-gray-400 font-bold mb-1">Email</p>
-                        <p class="text-sm text-gray-700 font-medium break-all">shrivastavankur99@gmail.com</p>
+                        <p class="text-xs sm:text-sm text-gray-700 font-medium break-all">shrivastavankur99@gmail.com</p>
                     </a>
-                    <a href="tel:+919540303802" class="scroll-reveal flex flex-col items-center text-center bg-white rounded-2xl shadow-sm border border-gray-100 p-6 card-hover group">
-                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-500 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                            <i data-lucide="phone" class="w-6 h-6 text-white"></i>
+                    <a href="tel:+919540303802" class="scroll-reveal flex flex-col items-center text-center bg-white rounded-2xl shadow-sm border border-gray-100 p-5 sm:p-6 card-hover group">
+                        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-500 flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform">
+                            <i data-lucide="phone" class="w-5 h-5 sm:w-6 sm:h-6 text-white"></i>
                         </div>
                         <p class="text-[10px] uppercase tracking-wider text-gray-400 font-bold mb-1">Phone</p>
-                        <p class="text-sm text-gray-700 font-medium">+91 9540303802</p>
+                        <p class="text-xs sm:text-sm text-gray-700 font-medium">+91 9540303802</p>
                     </a>
-                    <a href="https://www.linkedin.com/in/ankur-a-shrivastava-391096145/" target="_blank" class="scroll-reveal flex flex-col items-center text-center bg-white rounded-2xl shadow-sm border border-gray-100 p-6 card-hover group">
-                        <div class="w-14 h-14 rounded-2xl bg-[#0077B5] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                            <i data-lucide="linkedin" class="w-6 h-6 text-white"></i>
+                    <a href="https://www.linkedin.com/in/ankur-a-shrivastava-391096145/" target="_blank" class="scroll-reveal flex flex-col items-center text-center bg-white rounded-2xl shadow-sm border border-gray-100 p-5 sm:p-6 card-hover group">
+                        <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-[#0077B5] flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform">
+                            <i data-lucide="linkedin" class="w-5 h-5 sm:w-6 sm:h-6 text-white"></i>
                         </div>
                         <p class="text-[10px] uppercase tracking-wider text-gray-400 font-bold mb-1">LinkedIn</p>
-                        <p class="text-sm text-gray-700 font-medium">Ankur A Shrivastava</p>
+                        <p class="text-xs sm:text-sm text-gray-700 font-medium">Ankur A Shrivastava</p>
                     </a>
                 </div>
             </div>
@@ -769,19 +787,19 @@
     <!-- ========== FOOTER ========== -->
     <footer class="py-8 px-6 border-t border-gray-100">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-            <p class="text-sm text-gray-400">© 2026 Ankur Kumar.</p>
+            <p class="text-xs sm:text-sm text-gray-400">© 2025 Ankur Kumar.</p>
             <div class="flex items-center gap-3">
-                <a href="https://www.linkedin.com/in/ankur-a-shrivastava-391096145/" target="_blank" class="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center text-gray-400 hover:bg-brand-50 hover:text-brand-600 transition-all">
-                    <i data-lucide="linkedin" class="w-4 h-4"></i>
+                <a href="https://www.linkedin.com/in/ankur-a-shrivastava-391096145/" target="_blank" class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-gray-100 flex items-center justify-center text-gray-400 hover:bg-brand-50 hover:text-brand-600 transition-all">
+                    <i data-lucide="linkedin" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
                 </a>
-                <a href="mailto:shrivastavankur99@gmail.com" class="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center text-gray-400 hover:bg-brand-50 hover:text-brand-600 transition-all">
-                    <i data-lucide="mail" class="w-4 h-4"></i>
+                <a href="mailto:shrivastavankur99@gmail.com" class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-gray-100 flex items-center justify-center text-gray-400 hover:bg-brand-50 hover:text-brand-600 transition-all">
+                    <i data-lucide="mail" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
                 </a>
-                <a href="tel:+919540303802" class="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center text-gray-400 hover:bg-brand-50 hover:text-brand-600 transition-all">
-                    <i data-lucide="phone" class="w-4 h-4"></i>
+                <a href="tel:+919540303802" class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-gray-100 flex items-center justify-center text-gray-400 hover:bg-brand-50 hover:text-brand-600 transition-all">
+                    <i data-lucide="phone" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
                 </a>
-                <a href="resume.pdf" download class="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center text-gray-400 hover:bg-brand-50 hover:text-brand-600 transition-all">
-                    <i data-lucide="download" class="w-4 h-4"></i>
+                <a href="resume.pdf" download class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-gray-100 flex items-center justify-center text-gray-400 hover:bg-brand-50 hover:text-brand-600 transition-all">
+                    <i data-lucide="download" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
                 </a>
             </div>
         </div>
@@ -790,8 +808,16 @@
     <script>
         lucide.createIcons();
 
-        // ===== SKILLS DATA & RENDERING =====
         const skills = [
+            { name: 'Java 17+', cat: 'backend', color: 'blue' },
+            { name: 'Spring Boot', cat: 'backend', color: 'blue' },
+            { name: 'Spring MVC', cat: 'backend', color: 'blue' },
+            { name: 'REST APIs', cat: 'backend', color: 'blue' },
+            { name: 'Microservices', cat: 'backend', color: 'blue' },
+            { name: 'API Gateway', cat: 'backend', color: 'blue' },
+            { name: 'Config Server', cat: 'backend', color: 'blue' },
+            { name: 'JavaScript (ES6+)', cat: 'backend', color: 'blue' },
+            { name: 'React JS', cat: 'backend', color: 'blue' },
             { name: 'Jenkins', cat: 'devops', color: 'brand' },
             { name: 'Ansible', cat: 'devops', color: 'brand' },
             { name: 'Git', cat: 'devops', color: 'brand' },
@@ -813,12 +839,6 @@
             { name: 'Endeavor', cat: 'mainframe', color: 'purple' },
             { name: 'IBM Utilities', cat: 'mainframe', color: 'purple' },
             { name: 'z/OS', cat: 'mainframe', color: 'purple' },
-            { name: 'Oracle (TOAD)', cat: 'db', color: 'emerald' },
-            { name: 'Exadata', cat: 'db', color: 'emerald' },
-            { name: 'SQL Server', cat: 'db', color: 'emerald' },
-            { name: 'SQL Perf. Tuning', cat: 'db', color: 'emerald' },
-            { name: 'Shell Scripting', cat: 'db', color: 'emerald' },
-            { name: 'PowerShell', cat: 'db', color: 'emerald' },
             { name: 'GenAI Integration', cat: 'ai', color: 'amber' },
             { name: 'AppDynamics', cat: 'ai', color: 'amber' },
             { name: 'ELK Stack (Kibana)', cat: 'ai', color: 'amber' },
@@ -827,23 +847,29 @@
             { name: 'ServiceNow', cat: 'ai', color: 'amber' },
             { name: 'Jira Confluence', cat: 'ai', color: 'amber' },
             { name: 'SSL Certificate Mgmt', cat: 'ai', color: 'amber' },
+            { name: 'Oracle (TOAD)', cat: 'devops', color: 'brand' },
+            { name: 'Exadata', cat: 'devops', color: 'brand' },
+            { name: 'SQL Server', cat: 'devops', color: 'brand' },
+            { name: 'SQL Perf. Tuning', cat: 'devops', color: 'brand' },
+            { name: 'Shell Scripting', cat: 'devops', color: 'brand' },
+            { name: 'PowerShell', cat: 'devops', color: 'brand' },
         ];
 
         const colorMap = {
             brand: { bg: 'bg-brand-50', border: 'border-brand-100', text: 'text-brand-700', dot: 'bg-brand-400' },
             purple: { bg: 'bg-purple-50', border: 'border-purple-100', text: 'text-purple-700', dot: 'bg-purple-400' },
-            emerald: { bg: 'bg-emerald-50', border: 'border-emerald-100', text: 'text-emerald-700', dot: 'bg-emerald-400' },
+            blue: { bg: 'bg-blue-50', border: 'border-blue-100', text: 'text-blue-700', dot: 'bg-blue-400' },
             amber: { bg: 'bg-amber-50', border: 'border-amber-100', text: 'text-amber-700', dot: 'bg-amber-400' },
         };
 
         function renderSkills(filter = 'all') {
             const grid = document.getElementById('skillsGrid');
             const filtered = filter === 'all' ? skills : skills.filter(s => s.cat === filter);
-            grid.innerHTML = `<div class="flex flex-wrap gap-3 justify-center">${filtered.map(s => {
+            grid.innerHTML = `<div class="flex flex-wrap gap-2 sm:gap-3 justify-center">${filtered.map(s => {
                 const c = colorMap[s.color];
-                return `<div class="skill-pill ${c.bg} ${c.border} border rounded-xl px-4 py-2.5 cursor-default flex items-center gap-2">
+                return `<div class="skill-pill ${c.bg} ${c.border} border rounded-xl px-3 sm:px-4 py-1.5 sm:py-2.5 cursor-default flex items-center gap-2">
                     <span class="w-1.5 h-1.5 rounded-full ${c.dot}"></span>
-                    <span class="text-sm font-medium ${c.text}">${s.name}</span>
+                    <span class="text-xs sm:text-sm font-medium ${c.text}">${s.name}</span>
                 </div>`;
             }).join('')}</div>`;
         }
@@ -861,7 +887,6 @@
             });
         });
 
-        // ===== MOBILE MENU =====
         const menuBtn = document.getElementById('menuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
         let menuOpen = false;
@@ -873,7 +898,6 @@
             mobileMenu.classList.add('hidden'); menuOpen = false;
         }));
 
-        // ===== NAVBAR SCROLL =====
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
@@ -883,31 +907,10 @@
             }
         });
 
-        // ===== SCROLL REVEAL =====
         const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObserver.unobserve(e.target); } });
         }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
         document.querySelectorAll('.scroll-reveal').forEach(el => revealObserver.observe(el));
-
-        // ===== COUNTER ANIMATION =====
-        const counterObserver = new IntersectionObserver((entries) => {
-            entries.forEach(e => {
-                if (e.isIntersecting) {
-                    const el = e.target;
-                    const target = parseFloat(el.dataset.target);
-                    const isFloat = target % 1 !== 0;
-                    let current = 0;
-                    const step = target / 40;
-                    const interval = setInterval(() => {
-                        current += step;
-                        if (current >= target) { current = target; clearInterval(interval); }
-                        el.textContent = isFloat ? current.toFixed(1) : Math.floor(current);
-                    }, 40);
-                    counterObserver.unobserve(el);
-                }
-            });
-        }, { threshold: 0.5 });
-        document.querySelectorAll('.counter').forEach(el => counterObserver.observe(el));
     </script>
 </body>
 </html>
